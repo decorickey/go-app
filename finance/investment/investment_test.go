@@ -50,25 +50,25 @@ func TestCalc(t *testing.T) {
 	p, _ := NewPeriod(1)
 	r, _ := NewRoi(10)
 	expected, _ := NewAmount(1100000)
-	res, _ := Calc(a, p, r)
-	if res.Equals(expected) {
-		t.Errorf("expected: %v, actual: %v", expected, res)
+	actual, _ := Calc(a, p, r)
+	if !actual.Equals(expected) {
+		t.Errorf("expected: %v, actual: %v", expected, actual)
 	}
 
 	a, _ = NewAmount(1000000)
 	p, _ = NewPeriod(2)
 	r, _ = NewRoi(10)
-	res, _ = Calc(a, p, r)
+	actual, _ = Calc(a, p, r)
 	expected, _ = NewAmount(2310000)
-	if res.Equals(expected) {
-		t.Errorf("expected: %v, actual: %v", expected, res)
+	if !actual.Equals(expected) {
+		t.Errorf("expected: %v, actual: %v", expected, actual)
 	}
 
 	a, _ = NewAmount(1000000)
 	p, _ = NewPeriod(10)
 	r, _ = NewRoi(0)
-	res, _ = Calc(a, p, r)
-	if res.Equals(a.Mult(p.value)) {
-		t.Errorf("expected: %v, actual: %v", expected, res)
+	actual, _ = Calc(a, p, r)
+	if !actual.Equals(a.Mult(p.value)) {
+		t.Errorf("expected: %v, actual: %v", expected, actual)
 	}
 }
