@@ -3,8 +3,8 @@ package finance
 import (
 	"fmt"
 
-	model "go-app/application/internal/domain/model/finance"
-	"go-app/application/internal/domain/service"
+	model "go-app/domain/model/finance"
+	"go-app/domain/service"
 )
 
 type Usecase interface {

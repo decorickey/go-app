@@ -2,7 +2,7 @@ package service
 
 import (
 	"fmt"
-	model "go-app/application/internal/domain/model/finance"
+	model "go-app/domain/model/finance"
 )
 
 type FinanceService interface {

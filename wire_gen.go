@@ -4,16 +4,17 @@
 //go:build !wireinject
 // +build !wireinject
 
-package finance
+package main
 
 import (
-	"go-app/application/internal/domain/service"
+	"go-app/application/usecase/finance"
+	"go-app/domain/service"
 )
 
 // Injectors from wire.go:
 
-func InitializeUsecase() Usecase {
+func initializeFinanceUsecase() finance.Usecase {
 	financeService := service.NewFinanceService()
-	financeUsecase := NewUsecase(financeService)
-	return financeUsecase
+	usecase := finance.NewUsecase(financeService)
+	return usecase
 }
