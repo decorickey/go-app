@@ -6,14 +6,15 @@
 
 package main
 
+import (
+	"go-app/application/domain"
+	"go-app/application/usecase/finance"
+)
+
 // Injectors from wire.go:
 
-func InitializeEvent(phrase string) (Event, error) {
-	message := NewMessage(phrase)
-	greeter := NewGreeter(message)
-	event, err := NewEvent(greeter)
-	if err != nil {
-		return Event{}, err
-	}
-	return event, nil
+func initializeFinanceUsecase() finance.Usecase {
+	financeService := domain.NewFinanceService()
+	usecase := finance.NewUsecase(financeService)
+	return usecase
 }

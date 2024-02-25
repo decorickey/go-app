@@ -3,11 +3,14 @@
 
 package main
 
-import "github.com/google/wire"
+import (
+	"go-app/application/domain"
+	"go-app/application/usecase/finance"
 
-func InitializeEvent(phrase string) (Event, error) {
-	// 使用したいイニシャライザを渡す
-	wire.Build(NewEvent, NewGreeter, NewMessage)
-	// 戻り値の定義を満たすためにゼロ値を返却する
-	return Event{}, nil
+	"github.com/google/wire"
+)
+
+func initializeFinanceUsecase() finance.Usecase {
+	wire.Build(finance.NewUsecase, domain.NewFinanceService)
+	return nil
 }
