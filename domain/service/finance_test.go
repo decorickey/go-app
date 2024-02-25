@@ -24,7 +24,7 @@ func TestCalc(t *testing.T) {
 			r, _ := model.NewRoi(d.roi)
 			expected, _ := model.NewAmount(d.expected)
 			service := financeService{}
-			actual, _ := service.Simulate(a, p, r)
+			actual, _ := service.SimulateAnnualInvestment(a, p, r)
 			if !actual.Equals(expected) {
 				t.Errorf("expected: %v, actual: %v", expected, actual)
 			}

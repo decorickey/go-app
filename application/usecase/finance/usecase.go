@@ -33,7 +33,7 @@ func (u usecase) SimulateAnnualInvestment(a, p int, r float64) (int, error) {
 		return 0, fmt.Errorf("invalid roi: %w:", err)
 	}
 
-	result, err := u.service.Simulate(amount, period, roi)
+	result, err := u.service.SimulateAnnualInvestment(amount, period, roi)
 	if err != nil {
 		return 0, fmt.Errorf("unexpected error: %w", err)
 	}

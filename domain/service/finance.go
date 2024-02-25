@@ -6,7 +6,7 @@ import (
 )
 
 type FinanceService interface {
-	Simulate(a model.Amount, p model.Period, r model.Roi) (model.Amount, error)
+	SimulateAnnualInvestment(a model.Amount, p model.Period, r model.Roi) (model.Amount, error)
 }
 
 func NewFinanceService() FinanceService {
@@ -15,7 +15,7 @@ func NewFinanceService() FinanceService {
 
 type financeService struct{}
 
-func (s financeService) Simulate(a model.Amount, p model.Period, r model.Roi) (model.Amount, error) {
+func (s financeService) SimulateAnnualInvestment(a model.Amount, p model.Period, r model.Roi) (model.Amount, error) {
 	var f float64
 	for i := 1; i <= p.Value; i++ {
 		f += float64(a.Value)
