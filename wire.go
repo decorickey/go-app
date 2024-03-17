@@ -4,7 +4,7 @@
 package main
 
 import (
-	"go-app/application/usecase/investment"
+	"go-app/application/investment"
 	"go-app/domain/service"
 
 	"github.com/google/wire"
