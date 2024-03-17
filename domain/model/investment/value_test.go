@@ -1,4 +1,4 @@
-package finance
+package investment
 
 import "testing"
 

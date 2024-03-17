@@ -7,14 +7,14 @@
 package main
 
 import (
-	"go-app/application/usecase/finance"
+	"go-app/application/usecase/investment"
 	"go-app/domain/service"
 )
 
 // Injectors from wire.go:
 
-func initializeFinanceUsecase() finance.Usecase {
-	financeService := service.NewFinanceService()
-	usecase := finance.NewUsecase(financeService)
+func initializeInvestmentUsecase() investment.Usecase {
+	periodicInvestmentService := service.NewPeriodicInvestmentService()
+	usecase := investment.NewUsecase(periodicInvestmentService)
 	return usecase
 }

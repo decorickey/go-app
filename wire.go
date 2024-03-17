@@ -4,16 +4,16 @@
 package main
 
 import (
-	"go-app/application/usecase/finance"
+	"go-app/application/usecase/investment"
 	"go-app/domain/service"
 
 	"github.com/google/wire"
 )
 
-func initializeFinanceUsecase() finance.Usecase {
+func initializeInvestmentUsecase() investment.Usecase {
 	wire.Build(
-		finance.NewUsecase,
-		service.NewFinanceService,
+		service.NewPeriodicInvestmentService,
+		investment.NewUsecase,
 	)
 	return nil
 }

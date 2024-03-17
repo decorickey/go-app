@@ -5,7 +5,9 @@ import (
 )
 
 func main() {
-	usecase := initializeFinanceUsecase()
-	result, _ := usecase.SimulateAnnualInvestment(10000, 10, 1)
+	// s := service.NewPeriodicInvestmentService()
+	// u := investment.NewUsecase(s)
+	u := initializeInvestmentUsecase()
+	result, _ := u.SimulatePeriodicInvestment(100000, 30, 5)
 	fmt.Println(result)
 }
